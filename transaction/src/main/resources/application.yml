@@ -1,0 +1,32 @@
+server:
+  servlet:
+    context-path: /trx
+  port: 8080
+
+debug: false
+
+spring:
+  application:
+    name: transaction
+  devtools:
+    restart:
+      enabled: false
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:transaction
+    username: bank
+    password:
+
+url.transaction.status: "http://localhost:8080/trx/status"
